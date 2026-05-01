@@ -1,0 +1,267 @@
+CREATE DATABASE Alke_Wallet;
+USE Alke_Wallet;
+SHOW DATABASES;
+SHOW TABLES; 
+DESCRIBE TABLES;
+
+CREATE TABLE `alke_wallet`.`users` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `balance` DECIMAL(11,1) NOT NULL,
+  `currency_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+
+CREATE TABLE `alke_wallet`.`transactions` (
+  `transactions_id` INT NOT NULL,
+  `sender_user_id` INT NOT NULL,
+  `receiver_user_id` INT NOT NULL,
+  `transaction_date` DATE NOT NULL,
+  `amount` DECIMAL(11,1) NOT NULL,
+  `currency_id` INT NOT NULL,
+  PRIMARY KEY (`transactions_id`));
+
+CREATE TABLE `alke_wallet`.`currency`(
+`currency_id`INT NOT NULL, 
+`currency_name` VARCHAR (25) NOT NULL,
+`currency_symbol` VARCHAR (10) NOT NULL,
+PRIMARY KEY (`currency_id`));
+
+INSERT INTO  users (user_id, first_name, last_name, email, password, balance, currency_id)
+VALUES (1, 'Camilo', 'Negrete', 'milo.negrete@gmail.com', '123456789', 100000000, 2),
+(2, 'Antonia', 'Diaz', 'anto@gmail.com', '2233', 100000000, 2),
+(3, 'Francisca', 'Rojas', 'fran@icloud.com', 'qwerty34', 240000, 2),
+(4, 'Laura', 'Sanzani', 'lau.san@gmail.com', 'laulau123', 77740, 1),
+(5, 'Pamela', 'Carrasco', 'pame.cf@gmail.com', 'pam34', 115000, 3),
+(6, 'Veronica', 'Gatica', 'vgt@gmail.com', 'amor1960', 20000000, 2),
+(7, 'Carlos', 'Diaz', 'carlosandres@gmail.com', 'hola345', 30000, 2),
+(8, 'Matias', 'Gatica', 'matiasfer45@gmail.com', 'pepetu35', 80000, 2),
+(9, 'Paola', 'Garrido', 'garrido67@icloud.cl', '755rt', 44000000, 2),
+(10, 'Andres', 'Gatica', 'andresmarc@gmail.com', 'amor456', 20000000, 2),
+(11, 'Jason', 'Vial', 'jason.V.V@yahoo.es', 'JaJaVVV23', 17840, 2),
+(12, 'Mirna', 'Lobos', 'mir.mir@gmail.com', '123mir.es', 99990, 2),
+(13, 'Violeta', 'Sepulveda', 'viole.linda.02@gmail.com', 'vio02', 200000, 2),
+(14, 'Benjamin', 'Sepulveda', 'benjiprice07@gmail.com', 'Ben10', 200000, 2),
+(15, 'Carlos', 'Amigo', 'charlyfriend@gmail.com', 'charsdick15', 12000000, 2),
+(16, 'Javiera', 'Mardones', 'javimar@gmail.com', 'Jav123456', 12000000, 2),
+(17, 'Esteban', 'Quito', 'estebanquito@gmail.com', 'eqx13', 22490, 4),
+(18, 'María', 'Ordenes', 'mari.or@gmail.com', 'maryorde987', 33330, 2),
+(19, 'Lilian', 'Beauchef', 'lilibeau@icloud.com', 'lilithbeauty1412', 44000, 2),
+(20, 'Daniela', 'Muñoz', 'daniela.munoz@gmail.com', 'dmz2024', 150000, 2),
+(21, 'Rodrigo', 'Paredes', 'rodrigo.paredes@gmail.com', 'rparedes21', 18500000, 2),
+(22, 'Fernanda', 'Silva', 'fernanda.silva@gmail.com', 'fsilva88', 95000, 2),
+(23, 'Tomas', 'Araya', 'tomas.araya@gmail.com', 'tomy2023', 250000, 2),
+(24, 'Valentina', 'Torres', 'valen.torres@gmail.com', 'vt890', 1200000, 2),
+(25, 'Ignacio', 'Reyes', 'ignacio.reyes@gmail.com', 'nacho77', 350000, 2),
+(26, 'Constanza', 'Herrera', 'connie.herrera@gmail.com', 'ch2022', 450000, 2),
+(27, 'Felipe', 'Castro', 'felipe.castro@gmail.com', 'fcastro09', 2300000, 2),
+(28, 'Camila', 'Ortega', 'camila.ortega@gmail.com', 'cami456', 780000, 2),
+(29, 'Sebastian', 'Vargas', 'sebastian.vargas@gmail.com', 'svargas11', 5000000, 2),
+(30, 'Paula', 'Navarro', 'paula.navarro@gmail.com', 'pn2020', 120000, 2),
+(31, 'Alonso', 'Riquelme', 'alonso.riquelme@gmail.com', 'arq7788', 890000, 2),
+(32, 'Isidora', 'Fuentes', 'isidora.fuentes@gmail.com', 'ifuentes34', 65000, 2),
+(33, 'Cristobal', 'Morales', 'cristobal.morales@gmail.com', 'cmorales99', 980000, 2),
+(34, 'Antonia', 'Salazar', 'antonia.salazar@gmail.com', 'asalazar22', 210000, 2),
+(35, 'Diego', 'Cortes', 'diego.cortes@gmail.com', 'dcortes17', 3400000, 2),
+(36, 'Martina', 'Campos', 'martina.campos@gmail.com', 'mcampos55', 175000, 2),
+(37, 'Nicolas', 'Molina', 'nicolas.molina@gmail.com', 'nmolina08', 60000, 2),
+(38, 'Josefa', 'Bravo', 'josefa.bravo@gmail.com', 'jbravo2021', 340000, 2),
+(39, 'Francisco', 'Soto', 'francisco.soto@gmail.com', 'fsoto77', 9500000, 2),
+(40, 'Catalina', 'Lagos', 'catalina.lagos@gmail.com', 'clagos10', 410000, 2),
+(41, 'Matias', 'Contreras', 'matias.contreras@gmail.com', 'mcontreras6', 2000000, 2),
+(42, 'Florencia', 'Sandoval', 'florencia.sandoval@gmail.com', 'fsandoval88', 130000, 2),
+(43, 'Joaquin', 'Valenzuela', 'joaquin.valenzuela@gmail.com', 'jvalen123', 770000, 2),
+(44, 'Renata', 'Espinoza', 'renata.espinoza@gmail.com', 'respinoza44', 89000, 2),
+(45, 'Gabriel', 'Alarcon', 'gabriel.alarcon@gmail.com', 'galarcon01', 6800000, 2),
+(46, 'Trinidad', 'Godoy', 'trinidad.godoy@gmail.com', 'tgodoy77', 145000, 2),
+(47, 'Vicente', 'Mendez', 'vicente.mendez@gmail.com', 'vmendez90', 2750000, 2),
+(48, 'Amanda', 'Figueroa', 'amanda.figueroa@gmail.com', 'afigueroa33', 58000, 2),
+(49, 'Bruno', 'Delgado', 'bruno.delgado@gmail.com', 'bdelgado22', 1100000, 2),
+(50, 'Dominga', 'Peña', 'dominga.pena@gmail.com', 'dpena2024', 99000, 5);
+
+INSERT INTO transactions (transactions_id, sender_user_id, receiver_user_id, transaction_date, amount, currency_id)
+VALUES 
+(1, 33, 21, '2025-11-02', 30000, 2),
+(2, 4, 49, '2025-11-04', 200, 1),
+(3, 5, 13, '2025-11-05', 250, 3),
+(4, 17, 22, '2025-11-06', 3000, 4),
+(5, 50, 17, '2025-11-06', 25000, 5),
+(6, 12, 45, '2025-11-07', 15000, 2),
+(7, 5, 30, '2025-11-08', 400, 3),
+(8, 25, 8, '2025-11-09', 55000, 2),
+(9, 17, 44, '2025-11-10', 1200, 4),
+(10, 50, 2, '2025-11-11', 10000, 5),
+(11, 39, 15, '2025-11-12', 200000, 2),
+(12, 5, 24, '2025-11-13', 150, 3),
+(13, 17, 31, '2025-11-14', 5000, 4),
+(14, 50, 19, '2025-11-15', 35000, 5),
+(15, 8, 41, '2025-11-16', 12500, 2),
+(16, 5, 7, '2025-11-17', 90, 3),
+(17, 17, 36, '2025-11-18', 2100, 4),
+(18, 50, 23, '2025-11-19', 8000, 5),
+(19, 45, 10, '2025-11-20', 1000000, 2),
+(20, 5, 48, '2025-11-21', 320, 3),
+(21, 17, 3, '2025-11-22', 4400, 4),
+(22, 50, 11, '2025-11-23', 12000, 5),
+(23, 29, 35, '2025-11-24', 500000, 2),
+(24, 5, 27, '2025-11-25', 600, 3),
+(25, 17, 40, '2025-11-26', 750, 4),
+(26, 50, 14, '2025-11-27', 45000, 5),
+(27, 21, 6, '2025-11-28', 150000, 2),
+(28, 5, 42, '2025-11-29', 110, 3),
+(29, 17, 1, '2025-11-30', 9000, 4),
+(30, 50, 47, '2025-12-01', 2000, 5),
+(31, 35, 18, '2025-12-02', 85000, 2),
+(32, 5, 9, '2025-12-03', 215, 3),
+(33, 17, 50, '2025-12-04', 3300, 4),
+(34, 50, 28, '2025-12-05', 18000, 5),
+(35, 43, 16, '2025-12-06', 42000, 2),
+(36, 5, 22, '2025-12-07', 50, 3),
+(37, 17, 4, '2025-12-08', 6200, 4),
+(38, 50, 37, '2025-12-09', 29000, 5),
+(39, 27, 32, '2025-12-10', 130000, 2),
+(40, 5, 12, '2025-12-11', 1000, 3),
+(41, 17, 26, '2025-12-12', 4500, 4),
+(42, 50, 34, '2025-12-13', 7000, 5),
+(43, 49, 20, '2025-12-14', 95000, 2),
+(44, 5, 38, '2025-12-15', 75, 3),
+(45, 17, 46, '2025-12-16', 11000, 4),
+(46, 50, 5, '2025-12-17', 50000, 5),
+(47, 31, 25, '2025-12-18', 67000, 2),
+(48, 5, 43, '2025-12-19', 310, 3),
+(49, 17, 13, '2025-12-20', 8800, 4),
+(50, 50, 39, '2025-12-21', 15000, 5);
+
+INSERT INTO currency (currency_id, currency_name, currency_symbol) 
+VALUES 
+(1, 'dolar', 'USD'),
+(2, 'chileanpeage', 'CLP'),
+(3, 'euro', 'EUR'),
+(4, 'mexicanpeige', 'MXN'),
+(5, 'argentinianpeige', 'ARS');
+
+/*actuaización de sueldo de un usuario*/
+
+START TRANSACTION;
+SELECT balance
+FROM users 
+WHERE user_id = 33 
+FOR UPDATE;
+
+UPDATE users
+SET balance = balance -30000
+WHERE user_id = 33;
+
+UPDATE users 
+SET balance = balance + 30000 
+WHERE user_id = 21;
+
+INSERT INTO transactions (transactions_id, sender_user_id, receiver_user_id, transaction_date, amount, currency_id)
+VALUES (51, 33, 21, '2025-12-22', 30000, 2);
+
+COMMIT;
+
+/* Simular un error de integridad referencial*/
+
+START TRANSACTION;
+
+UPDATE users
+SET balance = balance -22000
+WHERE user_id = 33;
+
+UPDATE users 
+SET balance = balance + 22000
+WHERE user_id = 21;
+
+INSERT INTO transactions (transactions_id, sender_user_id, receiver_user_id, transaction_date, amount, currency_id)
+VALUES (52, 33, 21, '2025-12-23', 30000, 2);
+
+ROLLBACK;
+
+ 
+SELECT *
+FROM users;
+
+SELECT * FROM users
+WHERE (user_id = 1 OR 1 IS NULL)
+  AND (balance >50000 OR 50000 IS NULL)
+  AND (currency_id = 2 OR 2 IS NULL);
+  
+  SELECT * FROM users
+WHERE (user_id = 1 OR 1 IS NULL)
+   OR (balance > 50000 OR 50000 IS NULL)
+   OR (currency_id = 2 OR 2 IS NULL);
+   
+   /* Unir tablas Transactions y Users mediante INNER JOIN* /
+   
+   SELECT 
+    t.transactions_id, 
+    u.first_name AS sender_name, 
+    u.last_name AS sender_surname, 
+    t.amount, 
+    t.transaction_date
+FROM `alke_wallet`.`transactions` t
+INNER JOIN `alke_wallet`.`users` u 
+    ON t.sender_user_id = u.user_id;
+    
+    /* doble inner join a la tabla users */
+    
+   
+   SELECT 
+    t.transactions_id,
+    t.transaction_date,
+    t.amount,
+    sender.first_name AS sender,
+    receiver.first_name AS receiver
+FROM `alke_wallet`.`transactions` t
+INNER JOIN `alke_wallet`.`users` sender 
+    ON t.sender_user_id = sender.user_id
+INNER JOIN `alke_wallet`.`users` receiver 
+    ON t.receiver_user_id = receiver.user_id;
+    
+    /* Subconsulta para obtener el total de transacciones por un usuario especifico*/
+    
+    SELECT 
+    u.user_id, 
+    u.first_name, 
+    u.last_name,
+    (SELECT COUNT(*) 
+     FROM `alke_wallet`.`transactions` t 
+     WHERE t.sender_user_id = u.user_id OR t.receiver_user_id = u.user_id) AS total_transacciones
+FROM `alke_wallet`.`users` u;
+
+/* Vista de los top5 de usarios con mayor saldo*/
+
+CREATE VIEW `alke_wallet`.`view_top_usuarios_saldo` AS
+SELECT 
+    user_id, 
+    first_name, 
+    last_name, 
+    balance, 
+    currency_id
+FROM `alke_wallet`.`users`
+ORDER BY balance DESC
+LIMIT 5;
+
+/* Ultimos pasos de creacion de diagramas, relaciones y correciones necesarias*/
+
+ALTER TABLE `alke_wallet`.`transactions`
+ADD CONSTRAINT `fk_sender_user`
+  FOREIGN KEY (`sender_user_id`)
+  REFERENCES `alke_wallet`.`users` (`user_id`),
+ADD CONSTRAINT `fk_receiver_user`
+  FOREIGN KEY (`receiver_user_id`)
+  REFERENCES `alke_wallet`.`users` (`user_id`),
+ADD CONSTRAINT `fk_transaction_currency`
+  FOREIGN KEY (`currency_id`)
+  REFERENCES `alke_wallet`.`currency` (`currency_id`);
+  
+  
+  ALTER TABLE `alke_wallet`.`users`
+ADD CONSTRAINT `fk_user_currency`
+  FOREIGN KEY (`currency_id`)
+  REFERENCES `alke_wallet`.`currency` (`currency_id`);
