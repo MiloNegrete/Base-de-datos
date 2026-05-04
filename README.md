@@ -1,17 +1,27 @@
-# Base-de-datos
- <h1> Proceso de creación documentado de una base de datos relacionales mediante MySql </h1>
+# Base de Datos — Alke Wallet
 
-<h4> 1) Archivo de la base de datos </h4>
+Proceso de creación documentado de una base de datos relacional mediante MySQL.
 
- <h4> 2) Un texto explicativo en detalle, paso a paso, del proceso de implementación de la base de datos, con sus respectivas
-capturas de pantalla, que respaldan la veracidad del proyecto. <h4/>
+## 📋 Contenido del repositorio
 
- <h4> 3) Modelo relacional <h4/> 
+1. **Archivo de la base de datos** — Script SQL completo
+2. **Documentación paso a paso** — Proceso de implementación con capturas de pantalla
+3. **Modelo relacional** — Diagrama de relaciones entre tablas
+4. **Modelo Entidad-Relación** — Diagrama ER del sistema
+5. **Modelo conceptual** — Diseño conceptual de la base de datos
+6. **Respaldo de queries** — Todo el código SQL utilizado
 
- <h4> 4) Modelo Entidad-Relacion <h4/>
+## 🛠️ Tecnología
 
-<h4> 5) Modelo Conceptual <h4/>
+- MySQL
 
-<h4> 6) Respaldo de todo el código usado en la creación de la base de datos. (Querys) <h4/>
+## 📁 Archivos
 
-
+```
+base_de_datos/
+├── BASE_DE_DATOS_ALKE_WALLET.sql
+├── BDD_PASO_A_PASO.docx
+├── ER-relacional.png
+├── Modelo_Entidad-Relacion.png
+├── Modelo_conceptual.png
+└── RESPALDO_SCRIPT_BASE_DE_DATOS.sql
